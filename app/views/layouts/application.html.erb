@@ -18,6 +18,24 @@
   </head>
 
   <body>
+    <header>
+      <h2>JourneyInn</h2>
+      <nav>
+        <% if user_signed_in? %> <%# ログイン中か否かの分岐%>
+          <div class="user-menu">
+            <span><%= current_user.name %> ▼</span>
+            <ul class="shadelist">
+              <li><%= link_to "施設の新規登録", "#" %></li>
+              <li><%= link_to "アカウント設定", edit_user_registration_path %></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></li>
+            </ul>
+          </div>
+        <% else %>
+          <%= link_to "新規登録", new_user_registration_path %>
+          <%= link_to "ログイン", new_user_session_path %>
+        <% end %>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
