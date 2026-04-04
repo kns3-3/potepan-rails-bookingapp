@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protected #ApplicationControllerを継承した子クラス(Deviseなど)からのみアクセス可能
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name]) #sign_upの際にnameカラムの保存を許可
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduction]) #account_updateの際にname,introductionカラムの保存を許可
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :image]) #sign_upの際にnameカラムの保存を許可
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduction, :image]) #account_updateの際にname,introductionカラムの保存を許可
   end
 end

@@ -13,3 +13,78 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0c0b5a;
+  height: 90px;
+}
+
+.app-name {
+  color: white;
+  margin: 0 20px;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.user-menu {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  padding: 0 10px;
+  color: white;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%; /*丸くする*/
+  object-fit: cover; /*画像を歪ませずに切り抜く*/
+}
+
+.pulldown {
+  position: absolute;
+  top: 100%;
+  right:0;
+  display: none;
+  list-style: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  min-width: 130px;
+  padding: 10px 0;
+  margin-top: 12px;
+  z-index: 10;
+}
+
+.pulldown li {
+  margin: 5px 0;
+}
+
+.pulldown a {
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+  text-align: center; 
+  color: #333;
+}
+
+.pulldown a:hover {
+    color: #ff6347;
+}
+
+.active { /*このクラスがついたとき(クリックしたとき）に表示する*/
+  display: block;
+}

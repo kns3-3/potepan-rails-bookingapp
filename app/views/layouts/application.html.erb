@@ -19,12 +19,20 @@
 
   <body>
     <header>
-      <h2>JourneyInn</h2>
+      <h2 class="app-name">JourneyInn</h2>
       <nav>
-        <% if user_signed_in? %> <%# ログイン中か否かの分岐%>
+        <%# ログイン中か否かの分岐%>
+        <% if user_signed_in? %>
           <div class="user-menu">
-            <span><%= current_user.name %> ▼</span>
-            <ul class="shadelist">
+            <%# アイコン画像の登録があるか否かの分岐 %>
+            <% if current_user.image.attached? %>
+              <%= image_tag current_user.image, class: "user-icon" %>
+            <% else %>
+              <%= image_tag "icon.png", class: "user-icon" %>
+            <% end %>
+
+            <span class="user-name"><%= current_user.name %> ∨</span>
+            <ul class="pulldown">
               <li><%= link_to "施設の新規登録", "#" %></li>
               <li><%= link_to "アカウント設定", edit_user_registration_path %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></li>

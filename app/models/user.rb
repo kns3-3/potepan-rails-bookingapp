@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true #名前の入力は必須
+
+  has_one_attached :image #「image」という名前で1枚の画像を持てるようにする
 end
