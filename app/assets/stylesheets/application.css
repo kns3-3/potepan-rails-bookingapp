@@ -27,6 +27,56 @@ header {
   height: 90px;
 }
 
+.header-btn {
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.signup-btn {
+  background-color: #ff6347;
+}
+
+.signup-btn:hover {
+  background-color: #ee9473;
+}
+
+.login-btn {
+  background-color: #0c0b5a;
+}
+
+.login-btn:hover {
+  color: #bbb5b5;
+}
+
+.top-wrapper {
+  /*背景画面の設定*/
+  background-image: url("home1.png");
+  background-size: cover; /*画面いっぱいに広げる*/
+  background-position: center; /*画面の中央を基準にする*/
+  background-attachment: fixed; /*スクロールしても画像は動かない*/
+
+  min-height: calc(100vh - 90px);
+
+  /*文字の箱を中央に寄せる*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /*文字の設定*/
+  text-align: center;
+  color: white;
+}
+
+.top-wrapper h1 {
+  font-size: 50px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+}
+
 .app-name {
   color: white;
   margin: 0 20px;
@@ -88,3 +138,5 @@ header {
 .active { /*このクラスがついたとき(クリックしたとき）に表示する*/
   display: block;
 }
+
+

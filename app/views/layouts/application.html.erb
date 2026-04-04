@@ -39,8 +39,8 @@
             </ul>
           </div>
         <% else %>
-          <%= link_to "新規登録", new_user_registration_path %>
-          <%= link_to "ログイン", new_user_session_path %>
+          <%= link_to "ログイン", new_user_session_path, class: "header-btn login-btn" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "header-btn signup-btn" %>
         <% end %>
       </nav>
     </header>
