@@ -139,4 +139,95 @@ header {
   display: block;
 }
 
+/*新規登録画面*/
+.new-wrapper {
+  min-height: calc(100vh - 90px);
+  background-color: #dfdfdf;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
 
+.form-box {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.new-title {
+  text-align: center;
+  margin: 20px;
+  font-size: 30px;
+}
+
+.require {
+  color: #ff6347;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.field {
+  margin: 30px 0;
+}
+
+.form-label {
+  display: inline-block;
+  color: #4e4d4d;
+}
+
+.form-input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  padding: 0 10px;
+  margin: 8px 0;
+  background-color: #e4eafa;
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+
+.password-hint {
+  color: #666;
+  font-style: normal;
+  font-size: 13px;
+}
+
+.new-submit-btn {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff6347;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s; /*時間をかけて変える*/
+}
+
+.new-submit-btn:hover {
+  background-color: #ffa381;
+}
+
+.login-link {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.login-link a {
+  display: block;
+  text-decoration: none;
+  border: 1px solid #dadada;
+  border-radius: 10px;
+  padding: 12px;
+  background-color:white;
+  color: #666;
+  transition: 0.3s;
+}
+
+.login-link a:hover {
+  background-color: #d1d1d1;
+}
