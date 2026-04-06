@@ -231,3 +231,120 @@ header {
 .login-link a:hover {
   background-color: #d1d1d1;
 }
+
+/*ログイン画面*/
+.forgot-link {
+  margin-top: 20px;
+}
+
+.forgot-link a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #666;
+}
+
+.forgot-link a:hover {
+  text-decoration: underline;
+}
+
+/*アカウント＆プロフィール画面(設定：上段)*/
+.show-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  background-color: white;
+}
+
+.show-title {
+  margin: 20px;
+  color: #474646;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.switch-tabs {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 15px;
+}
+
+.tab-item {
+  flex: 1;
+  text-decoration: none;
+  text-align: center;
+  color: #999;
+}
+
+/*真ん中の仕切り線*/
+.tab-item:first-child {
+  border-right: 1px solid #ddd;
+}
+
+/*選択されているタブ(active)のスタイル*/
+.tab-item.active{
+  color: #ff6347;
+}
+
+.totop-link {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.totop-link a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #999999;
+}
+
+.totop-link a:hover {
+  text-decoration-line: underline;
+}
+
+/*アカウント＆プロフィール画面(下段)*/
+.show-if {
+  padding: 0 20px;
+  margin-top: 50px;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  margin: 30px 0;
+  padding-bottom: 20px;
+}
+
+.account-title {
+  color: #474646;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.edit-link {
+  text-decoration: none;
+  color:#2225d6 ;
+  font-size: 20px;
+  margin: 0 25px;
+}
+
+.edit-link:hover {
+  text-decoration: underline;
+}
+
+.mail-field, .pass-field, .pic-field, .name-field, .intro-field {
+  display: flex;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.account-label {
+ width: 200px; /*ラベル幅を固定することで右の値の開始位置が揃う*/
+ font-weight: bold;
+ color:  #474646;
+}
+
+.account-input {
+  flex: 1;
+}

@@ -34,7 +34,7 @@
             <span class="user-name"><%= current_user.name %> ∨</span>
             <ul class="pulldown">
               <li><%= link_to "施設の新規登録", "#" %></li>
-              <li><%= link_to "アカウント設定", edit_user_registration_path %></li>
+              <li><%= link_to "アカウント設定", user_path(current_user) %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></li>
             </ul>
           </div>

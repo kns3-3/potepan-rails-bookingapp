@@ -1,0 +1,21 @@
+<div class="account-header">
+  <h2 class="account-title">プロフィール</h2>
+  <%= link_to "✎編集", edit_user_path(@user, type: "profile"), class: "edit-link" %>
+</div>
+
+<div class="account-info">
+  <div class="pic-field">
+    <span class="account-label">アイコン画像</span>
+    <span class="account-input"><%= @user.name.presence || "未設定" %></span>
+  </div>  
+
+<div class="name-field">
+    <span class="account-label">名前</span>
+    <span class="account-input"><%= @user.name.presence || "未設定" %></span>
+  </div>
+
+  <div class="intro-field">
+    <span class="account-label">自己紹介</span>
+    <span class="account-input"><%= @user.introduction.presence || "未設定" %></span>
+  </div>
+</div>

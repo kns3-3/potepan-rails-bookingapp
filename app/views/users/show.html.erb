@@ -1,0 +1,22 @@
+<div class="show-container">
+  <h2 class="show-title">設定</h2>
+
+  <div class="switch-tabs">
+    <%= link_to "アカウント", user_path(@user, type: "account"),
+        class: "tab-item #{"active" if params[:type] != "profile"}" %>
+    <%= link_to "プロフィール", user_path(@user, type: "profile"),
+        class: "tab-item #{"active" if params[:type] == "profile"}" %>
+  </div>
+
+  <div class="show-if">
+    <% if params[:type] == "profile" %>
+      <%= render "profile_view" %>
+    <% else %>
+      <%= render "account_view" %>
+    <% end %>
+  </div>
+
+  <div class="totop-link">
+    <%= link_to "トップページへ戻る", root_path %>
+  </div>
+</div>
