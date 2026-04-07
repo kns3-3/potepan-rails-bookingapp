@@ -348,3 +348,22 @@ header {
 .account-input {
   flex: 1;
 }
+
+/*アカウント・プロフィール編集画面*/
+.cancel-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #666;
+  background-color: #FFF;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
