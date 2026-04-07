@@ -27,3 +27,25 @@ document.addEventListener("turbo:load", function() {
     });
   }
 });
+
+window.toggleMenu = function(element) {
+  //クリックされた三点リーダーの隣にあるメニューを探す
+  const dropdown = element.nextElementSibling;
+  
+  //他に開いているメニューがあれば全部閉じる
+  document.querySelectorAll('.room-dropdown').forEach(menu => {
+    if (menu !== dropdown) menu.classList.remove('show');
+  });
+
+  //今のメニューの表示・非表示を切り替える
+  dropdown.classList.toggle('show');
+};
+
+//画面のどこかをクリックした時にメニューを閉じる
+window.addEventListener('click', function(e) {
+  if (!e.target.matches('.menu-dots')) {
+    document.querySelectorAll('.room-dropdown').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  }
+});

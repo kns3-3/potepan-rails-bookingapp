@@ -33,7 +33,9 @@
 
             <span class="user-name"><%= current_user.name %> ∨</span>
             <ul class="pulldown">
-              <li><%= link_to "施設の新規登録", "#" %></li>
+              <li><%= link_to "施設の新規登録", new_room_path %></li>
+              <li><%= link_to "予約済み一覧", "#" %></li>
+              <li><%= link_to "登録済み一覧", rooms_path %></li>
               <li><%= link_to "アカウント設定", user_path(current_user) %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></li>
             </ul>
@@ -44,6 +46,15 @@
         <% end %>
       </nav>
     </header>
+
+    <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,49 @@
+<div class="new-wrapper">
+  <div class="form-box">
+    <h2 class="new-title">施設登録</h2>
+
+    <%= form_with model: @room, local: true, class: "edit-form", multipart: true do |f| %>
+      
+      <% if @room.errors.any? %>
+        <div id="error_explanation" style="color: red; margin-bottom: 20px;">
+          <ul>
+            <% @room.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      
+      <div class="field">
+        <%= f.label :name, "施設名", class: "form-label" %>
+        <%= f.text_field :name, class: "form-input-text", placeholder: "施設名を入力" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description, "施設詳細", class: "form-label" %>
+        <%= f.text_area :description, class: "form-input-text", style: "height: 120px;", placeholder: "施設詳細を入力" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :price, "宿泊料金", class: "form-label" %>
+        <%= f.number_field :price, class: "form-input-text", placeholder: "一日あたりの料金を入力" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :address, "住所", class: "form-label" %>
+        <%= f.text_field :address, class: "form-input-text", placeholder: "住所を入力" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :image, "施設画像", class: "form-label" %>
+        <%= f.file_field :image, class: "form-input-file" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "登録する", class: "new-submit-btn" %>
+      </div>
+    <% end %>
+
+      <%= link_to "キャンセル", root_path, class: "cancel-btn" %>
+  </div>
+</div>
