@@ -40,7 +40,6 @@ class UsersController < ApplicationController
   
   #ストロングパラメータ(プロフィール用)
   def profile_params
-    params.require(:user).permit(:name, :introduction)
+    params.require(:user).permit(:image, :name, :introduction)
   end
-  
 end

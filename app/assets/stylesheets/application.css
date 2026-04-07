@@ -349,7 +349,44 @@ header {
   flex: 1;
 }
 
+.user-icon-large {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%; /*円形*/
+  object-fit: cover; /*画像の縦横比を崩さず収める*/
+  border: 2px solid #ddd;
+}
+
+.profile-content {
+  padding: 20px 0;
+}
+
 /*アカウント・プロフィール編集画面*/
+
+.edit-form .field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/*ラベルの幅を固定して、右側の入力欄の開始位置を揃える*/
+.edit-form .form-label {
+  width: 150px;
+  color: #5c5a5a;
+  flex-shrink: 0;
+}
+
+/*テキスト入力と自己紹介の枠*/
+.edit-form .form-input-text {
+  flex: 1;
+  height: 45px;
+  padding: 10px;
+  background-color: #e4eafa;
+  border: 1px solid #555555;
+  border-radius: 5px;
+  display: block;
+}
+
 .cancel-btn {
   display: block;
   text-align: center;
