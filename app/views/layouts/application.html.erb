@@ -19,7 +19,10 @@
 
   <body>
     <header>
-      <h2 class="app-name">JourneyInn</h2>
+      <div class="app-name">
+        <%= link_to "JourneyInn", root_path, class: "top-logo" %>
+      </div>
+
       <nav>
         <%# ログイン中か否かの分岐%>
         <% if user_signed_in? %>

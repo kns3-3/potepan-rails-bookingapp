@@ -100,9 +100,23 @@ header {
 .app-name {
   color: white;
   margin: 0 20px;
-  font-size: 50px;
+  font-size: 55px;
   display: flex;
   align-items: center;
+}
+
+.top-logo {
+  text-decoration: none;
+  color: white;
+  font-size: inherit; /*app-nameのサイズを継承する*/
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+
+.top-logo:hover {
+ opacity: 0.8;
 }
 
 .user-menu {
