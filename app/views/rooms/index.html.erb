@@ -37,7 +37,7 @@
           </td>
 
           <td class="td-date">
-            <%= room.created_at.strftime("%Y/%m/%d") %>
+            <%= room.created_at.to_fs(:datetime_jp) %>
           </td>
 
           <td class="td-action">

@@ -15,22 +15,30 @@
       <% end %>
       
       <div class="field">
-        <%= f.label :name, "施設名", class: "form-label" %>
+        <%= f.label :name, class: "form-label" do %>
+          施設名<span class="require">*</span>
+        <% end %>
         <%= f.text_field :name, class: "form-input-text", placeholder: "施設名を入力" %>
       </div>
 
       <div class="field">
-        <%= f.label :description, "施設詳細", class: "form-label" %>
+        <%= f.label :description, class: "form-label" do %>
+          施設詳細<span class="require">*</span>
+        <% end %>
         <%= f.text_area :description, class: "form-input-text", style: "height: 120px;", placeholder: "施設詳細を入力" %>
       </div>
 
       <div class="field">
-        <%= f.label :price, "宿泊料金", class: "form-label" %>
+        <%= f.label :price, class: "form-label" do %>
+          宿泊料金<span class="require">*</span>
+        <% end %>
         <%= f.number_field :price, class: "form-input-text", placeholder: "一日あたりの料金を入力" %>
       </div>
 
       <div class="field">
-        <%= f.label :address, "住所", class: "form-label" %>
+        <%= f.label :address, class: "form-label" do %>
+          住所<span class="require">*</span>
+        <% end %>
         <%= f.text_field :address, class: "form-input-text", placeholder: "住所を入力" %>
       </div>
 

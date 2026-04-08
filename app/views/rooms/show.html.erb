@@ -2,6 +2,7 @@
   <div class="show-if">
     <div class="account-header">
       <h2 class="account-title">施設詳細</h2>
+
       <%= link_to "✎編集", edit_room_path(@room), class: "edit-link" %>
     </div>
 
@@ -39,7 +40,7 @@
     </div>
 
     <div class="totop-link">
-      <%= link_to "一覧へ戻る", rooms_path %>
+      <%= link_to "直前のページへ戻る", :back %>
     </div>
   </div>
 </div>
