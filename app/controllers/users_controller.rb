@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #ログインしていない人は見れないようにする
+  # ログインしていない人は見れないようにする
   before_action :authenticate_user!
 
   def show
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
 
-    #どの編集フォームから来たかによって、パラメータを切り替える
+    # どの編集フォームから来たかによって、パラメータを切り替える
     case params[:update_type]
     when "account"
       if @user.update(account_params)
@@ -33,12 +33,12 @@ class UsersController < ApplicationController
 
   private
 
-  #ストロングパラメータ(アカウント用)
+  # ストロングパラメータ(アカウント用)
   def account_params
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
-  
-  #ストロングパラメータ(プロフィール用)
+
+  # ストロングパラメータ(プロフィール用)
   def profile_params
     params.require(:user).permit(:image, :name, :introduction)
   end

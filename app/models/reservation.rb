@@ -2,14 +2,14 @@ class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :room
 
-  #必須項目の設定
+  # 必須項目の設定
   validates :start_date, :end_date, :person_count, presence: true
-  #予約人数は1人以上
+  # 予約人数は1人以上
   validates :person_count, numericality: { greater_than_or_equal_to: 1 }
 
-  #カスタムバリデーション(チェックイン日は今日以降)
+  # カスタムバリデーション(チェックイン日は今日以降)
   validate :start_date_cannot_be_in_the_past
-  #カスタムバリデーション(チェックアウト日はチェックイン日を遡らない)
+  # カスタムバリデーション(チェックアウト日はチェックイン日を遡らない)
   validate :end_date_cannot_be_before_start_date
 
   private

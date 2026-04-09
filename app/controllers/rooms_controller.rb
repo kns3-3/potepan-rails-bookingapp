@@ -1,7 +1,6 @@
 class RoomsController < ApplicationController
-
-  #ログインしないとnewとcreateは操作できない
-  before_action :authenticate_user!, except: [:index, :show]
+  # ログインしないとnewとcreateは操作できない
+  before_action :authenticate_user!, except: [ :index, :show ]
 
   def index
     @rooms = Room.all
@@ -44,20 +43,20 @@ class RoomsController < ApplicationController
     redirect_to rooms_path, notice: "施設を削除しました", status: :see_other
   end
 
-  #あいまい検索のアクション
+  # あいまい検索のアクション
   def search
     @rooms =Room.all
 
-    #エリアが選択されたら、そのエリアで絞り込む
+    # エリアが選択されたら、そのエリアで絞り込む
     if params[:area].present?
       @rooms = @rooms.where("address LIKE ?", "%#{params[:area]}%")
     end
 
-    #施設名か施設詳細のどちらかにワードが含まれていればヒットする
+    # 施設名か施設詳細のどちらかにワードが含まれていればヒットする
     if params[:keyword].present?
       @rooms = @rooms.where("name LIKE ? OR description LIKE ?", "%#{params[:keyword]}%", "%#{params[:keyword]}%")
     end
-    
+
     @count = @rooms.count
   end
 

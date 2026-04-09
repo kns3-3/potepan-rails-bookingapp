@@ -1,22 +1,21 @@
 Rails.application.routes.draw do
-  
   root "home#top"
 
   devise_for :users
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [ :show, :edit, :update ]
 
-  #あいまい検索
+  # あいまい検索
   resources :rooms do
     collection do
       get "search"
     end
   end
 
-  #予約関連
-  resources :reservations, only: [:index, :create, :destroy] do
+  # 予約関連
+  resources :reservations, only: [ :index, :create, :destroy ] do
     collection do
-      post :confirm #予約確認画面用
+      post :confirm # 予約確認画面用
       get :confirm
     end
   end
