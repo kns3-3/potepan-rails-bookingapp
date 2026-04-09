@@ -27,9 +27,9 @@
           <td><%= link_to res.room.name, room_path(res.room) %></td>
           <td><%= res.room.description %></td>
           <td><%= res.room.price * (res.end_date - res.start_date).to_i * res.person_count %>円</td>
-          <td><%= res.start_date %></td>
-          <td><%= res.end_date %></td>
-          <td><%= res.created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= res.start_date.to_fs(:datetime_jp) %></td>
+          <td><%= res.end_date.to_fs(:datetime_jp) %></td>
+          <td><%= res.created_at.to_fs(:datetime_jp) %></td>
           <td class="td-action">
             <div class="room-menu-container">
               <span class="menu-dots" onclick="toggleMenu(this)">⋮</span>
