@@ -17,13 +17,12 @@
           <% end %>
         </div>
       </div>
-
       <div class="name-field">
         <span class="account-label">施設名</span>
         <span class="account-input"><%= @room.name %></span>
       </div>
 
-      <div class="intro-field">
+       <div class="intro-field">
         <span class="account-label">施設詳細</span>
         <span class="account-input"><%= @room.description %></span>
       </div>
@@ -37,10 +36,45 @@
         <span class="account-label">住所</span>
         <span class="account-input"><%= @room.address %></span>
       </div>
-    </div>
+
+
+      <% if @reservation.errors.any? %>
+        <div id="error_explanation" style="color: red;">
+          <ul>
+            <% @reservation.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="reservation-form">
+        <%= form_with(model: @reservation, url: confirm_reservations_path, method: :post, local: true, data: { turbo: false }) do |f| %>
+          <%= f.hidden_field :room_id, value: @room.id %>
+
+          <div class="field">
+            <%= f.label :start_date %>
+            <%= f.date_field :start_date, class: "form-control" %>
+          </div>
+      
+          <div class="field">
+            <%= f.label :end_date %>
+            <%= f.date_field :end_date, class: "form-control" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :person_count %>
+            <%= f.number_field :person_count, class: "form-control" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "予約確認画面へ進む", class: "btn-primary" %>
+          </div>
+        <% end %>
+      </div>
 
     <div class="totop-link">
-      <%= link_to "直前のページへ戻る", :back %>
+      <%= link_to "<< 戻る", :back %>
     </div>
   </div>
 </div>
