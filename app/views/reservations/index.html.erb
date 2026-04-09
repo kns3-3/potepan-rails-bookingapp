@@ -1,22 +1,45 @@
-<div class="container">
-  <h2>予約済み施設一覧</h2>
+<div class="room-index-container">
+  <h2 class="index-title">予約済み施設一覧</h2>
 
-  <table>
+  <table class="room-table">
     <thead>
       <tr>
-        <th>施設名</th>
-        <th>チェックイン</th>
-        <th>チェックアウト</th>
-        <th>予約日</th>
+        <th class="th-image">画像</th>
+        <th class="th-name">施設名</th>
+        <th class="th-intro">紹介文</th>
+        <th class="th-price">合計料金</th>
+        <th class="th-date">チェックイン</th>
+        <th class="th-date">チェックアウト</th>
+        <th class="th-date">予約日</th>
+        <th class="th-action"></th>
       </tr>
     </thead>
     <tbody>
       <% @reservations.each do |res| %>
         <tr>
+           <td>
+            <% if res.room.image.attached? %>
+              <%= image_tag res.room.image, class: "table-img" %>
+            <% else %>
+              <%= image_tag "room.png", class: "table-img" %>
+            <% end %>
+          </td>
           <td><%= link_to res.room.name, room_path(res.room) %></td>
+          <td><%= res.room.description %></td>
+          <td><%= res.room.price * (res.end_date - res.start_date).to_i * res.person_count %>円</td>
           <td><%= res.start_date %></td>
           <td><%= res.end_date %></td>
           <td><%= res.created_at.strftime('%Y/%m/%d') %></td>
+          <td class="td-action">
+            <div class="room-menu-container">
+              <span class="menu-dots" onclick="toggleMenu(this)">⋮</span>
+                <div class="room-dropdown">
+                  <%= link_to "削除", reservation_path(res), 
+                               data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, 
+                               class: "dropdown-item delete-text" %>
+                </div>
+            </div>
+          </td>
         </tr>
       <% end %>
     </tbody>

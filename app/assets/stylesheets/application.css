@@ -412,6 +412,11 @@ header {
   margin-bottom: 30px;
 }
 
+.account-info .account-input-a {
+  font-size: 22px;
+  color: #575656;
+}
+
 /*ラベルの幅を固定して、右側の入力欄の開始位置を揃える*/
 .edit-form .form-label {
   width: 150px;
@@ -683,4 +688,178 @@ font-size: 18px;
 
 .detail-btn:hover {
   background-color: #ff6347;
+}
+
+/*施設詳細画面*/
+.room-show-container {
+max-width: 1000px;
+margin: 50px auto; /*画面中央配置*/
+padding: 0 20px;
+background-color: white;
+border-radius: 15px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+overflow: hidden; /*丸い角からはみ出した部分を隠す*/
+}
+
+.room-show-container .user-icon-large {
+  width: 100% !important;
+  height: 450px !important;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+
+.room-show-container .name-field,
+.room-show-container .intro-field,
+.room-show-container .mail-field,
+.room-show-container .pass-field {
+  display: block !important;
+  text-align: left !important;
+  margin-bottom: 25px;
+}
+
+.name-field .account-input {
+  font-size: 32px !important;
+  font-weight: bold;
+  color: #333;
+}
+
+.intro-field .account-input {
+  font-size: 16px !important;
+  line-height: 1.8;
+  color: #555;
+  display: block;
+}
+
+.mail-field .account-input,
+.pass-field .account-input {
+  font-size: 15px !important;
+  color: #888;
+}
+
+.room-show-container .mail-field .account-input {
+  font-size: 24px !important;
+  font-weight: bold;
+  color: #ff6347 !important;
+}
+
+.reservation-form-bottom {
+  background-color: #fdf5e6;
+  padding: 40px;
+  border-top: 1px solid #eee;
+}
+
+.reservation-form-bottom .form-with {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /*幅が狭くなったら折り返す*/
+}
+
+.reservation-form-bottom .field {
+  flex: 1; /*幅を均等に*/
+  min-width: 250px;
+  margin: 0;
+}
+
+.reservation-form-bottom .field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.reservation-form-bottom .form-control {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 16px;
+}
+
+.reservation-form-bottom .actions {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.reservation-form-bottom .btn-primary {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #ff7f50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reservation-form-bottom .btn-primary:hover {
+  background-color: #ff6347;
+}
+
+/*予約確認画面*/
+
+.new-wrapper {
+  background-color: #f5f5f5 !important;
+  min-height: calc(100vh - 90px);
+}
+
+.confirm-box {
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 60px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 90%;
+}
+
+.reservation-details {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.reservation-details p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0;
+  color: #333;
+}
+.reservation-details p strong {
+  color: #666;
+  font-weight: bold;
+}
+
+.reservation-details h3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.reservation-details p:last-child {
+  display: block;
+  text-align: center;
+  border-bottom: none;
+  font-size: 14px;
+  color: #999;
+  margin-top: 20px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column; /* ボタンを縦に並べる */
+  gap: 15px;
 }

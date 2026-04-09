@@ -14,9 +14,10 @@ Rails.application.routes.draw do
   end
 
   #予約関連
-  resources :reservations, only: [:index, :create] do
+  resources :reservations, only: [:index, :create, :destroy] do
     collection do
       post :confirm #予約確認画面用
+      get :confirm
     end
   end
 

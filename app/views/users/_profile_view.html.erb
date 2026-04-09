@@ -16,13 +16,14 @@
       <% end %>
    </div>
   </div>
+  <div class="account-info">
+    <div class="name-field">
+        <span class="account-label">名前</span>
+        <span class="account-input-a"><%= @user.name.presence || "未設定" %></span>
+    </div>
 
-  <div class="name-field">
-      <span class="account-label">名前</span>
-      <span class="account-input"><%= @user.name.presence || "未設定" %></span>
-  </div>
-
-  <div class="intro-field">
-    <span class="account-label">自己紹介</span>
-    <span class="account-input"><%= @user.introduction.presence || "未設定" %></span>
+    <div class="intro-field">
+      <span class="account-label">自己紹介</span>
+      <span class="account-input-a"><%= @user.introduction.presence || "未設定" %></span>
+    </div>
   </div>

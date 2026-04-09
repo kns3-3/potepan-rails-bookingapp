@@ -1,5 +1,6 @@
-<div class="container">
-  <h2>予約内容の確認</h2>
+<div class="new-wrapper">
+  <div class="confirm-box">
+  <h2 class="new-title">予約内容の確認</h2>
 
   <div class="reservation-details">
     <p><strong>施設名</strong><%= @room.name %></p>
@@ -9,20 +10,21 @@
     <p><strong>宿泊人数</strong><%= @reservation.person_count %> 人</p>
     <h3>合計金額 ￥<%= number_with_delimiter(@total_price) %></h3>
     <p>上記内容で正しければ「確定」ボタンを押してください。</p>
-  </div>
-
-  <%# 予約内容をcreateアクションへ送り保存する %>
-  <%= form_with(model: @reservation, url: reservations_path, method: :post, local: true) do |f| %>
-    <%# ユーザーが入力した内容を隠しデータとして次の保存処理に引き継ぐ %>
-    <%= f.hidden_field :start_date %>
-    <%= f.hidden_field :end_date %>
-    <%= f.hidden_field :person_count %>
-    <%= f.hidden_field :room_id %>
-    <%= f.hidden_field :user_id %>
-
-    <div class="actions">
-      <%= f.submit "予約を確定する", class: "btn-primary" %>
-      <%= link_to "詳細画面に戻る", :back, class: "btn-secondary" %>
     </div>
-  <% end %>
+
+    <%# 予約内容をcreateアクションへ送り保存する %>
+    <%= form_with(model: @reservation, url: reservations_path, method: :post, local: true) do |f| %>
+      <%# ユーザーが入力した内容を隠しデータとして次の保存処理に引き継ぐ %>
+      <%= f.hidden_field :start_date %>
+      <%= f.hidden_field :end_date %>
+      <%= f.hidden_field :person_count %>
+      <%= f.hidden_field :room_id %>
+      <%= f.hidden_field :user_id %>
+
+      <div class="actions">
+        <%= f.submit "予約を確定する", class: "new-submit-btn" %>
+        <%= link_to "詳細画面に戻る", :back, class: "cancel-btn" %>
+      </div>
+    <% end %>
+  </div>
 </div>

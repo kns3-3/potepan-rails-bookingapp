@@ -39,6 +39,12 @@ class ReservationsController < ApplicationController
       @reservations = current_user.reservations.order(created_at: :desc)
     end
 
+    def destroy
+      @reservation = Reservation.find(params[:id])
+      @reservation.destroy
+      redirect_to reservation_path, notice: "予約を削除しました", status: :see_other
+    end
+
   private
 
   #ストロングパラメータ
